@@ -1,0 +1,16 @@
+.btcd-editor {
+  width: 98% !important;
+  position: absolute;
+  z-index: 100;
+}
+
+
+.btcd-mce-tinymce-hidden {
+  visibility: hidden !important;
+  display: none !important;
+}
+
+.btcd-mce-tinymce-visible {
+  visibility: visible !important;
+  display: block !important;
+}

@@ -1,0 +1,113 @@
+/* Grabber */
+.drag:not(.no-drg) {
+  cursor: grab;
+}
+
+.drag:hover {
+  background: rgba(0, 114, 255, 0.12156862745098039);
+}
+
+.drag:active {
+  cursor: grabbing;
+}
+
+.no-drg {
+  cursor: default;
+}
+/* =========grid layout csss */
+
+.react-grid-layout {
+  position: relative;
+  transition: height 200ms ease;
+}
+.react-grid-item {
+  transition: all 200ms ease;
+  transition-property: left, top;
+}
+.react-grid-item.cssTransforms {
+  transition-property: transform;
+}
+.react-grid-item.resizing {
+  z-index: 1;
+  will-change: width, height;
+}
+
+.react-grid-item.react-draggable-dragging {
+  background: white;
+  transition: none;
+  z-index: 3;
+  will-change: transform;
+}
+
+.react-grid-item.dropping {
+  visibility: hidden;
+}
+
+.react-grid-item.react-grid-placeholder {
+  background: rgba(87, 165, 255, 0.233);
+  /* border: 2px solid rgb(28, 89, 255); */
+  opacity: .5;
+  transition-duration: 100ms;
+  z-index: 2;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.react-grid-item > .react-resizable-handle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: scale(0);
+}
+
+.react-grid-item > .react-resizable-handle::after {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  content: "";
+  width: 5px;
+  height: 5px;
+  /* border-right: 2px solid rgba(0, 0, 0, 0.4); */
+  /* border-bottom: 2px solid rgba(0, 0, 0, 0.4); */
+}
+
+.react-resizable-hide > .react-resizable-handle {
+  display: none;
+}
+
+
+/* ===================== react resizable css start==================== */
+
+
+.react-resizable {
+  position: relative;
+}
+.react-resizable-handle {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  background-position: bottom right;
+  padding: 0 1px 1px 0;
+}
+
+.react-resizable-handle-se {
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  cursor: se-resize;
+  transform: rotate(90deg);
+  background-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9L9 1" class="s" /><path d="M7 9L9 7" class="s"/><style>.s{stroke:black;stroke-width:1.5;stroke-linecap:round;}</style></svg>');
+}
+.react-resizable-handle-e {
+  top: 43%;
+  width: 15px;
+  height: 25px;
+  margin-top: -10px;
+  cursor: ew-resize;
+  background-image: url('data:image/svg+xml;utf8,<svg width="7" height="18" viewBox="0 0 29 72" fill="none" xmlns="http://www.w3.org/2000/svg"><style>.r{fill: black;width: 12px;height: 12px;rx: 10px;}</style><rect x="10" y="1" class="r" /><rect x="10" y="31" class="r" /><rect x="10" y="61" class="r" /></svg>');
+}
