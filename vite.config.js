@@ -39,13 +39,13 @@ export default defineConfig({
   },
 
   server: {
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:3001',
     // required to load scripts from custom host
     cors: true,
 
     // we need a strict port to match on PHP side
     strictPort: true,
-    port: 3000,
+    port: 3001,
     hmr: { host: 'localhost' },
     commonjsOptions: { transformMixedEsModules: true },
   },

@@ -104,7 +104,7 @@ a:hover {
 }
 
 .media-toolbar .button-primary {
-  background: $blue  !important;
+  background: $blue !important;
   color: white !important;
   border-radius: 20px !important;
 
@@ -133,7 +133,7 @@ a:hover {
 }
 
 button.check {
-  background: $blue  !important;
+  background: $blue !important;
 }
 
 .media-modal {
@@ -142,14 +142,14 @@ button.check {
   }
 
   & a {
-    color: $blue  !important;
+    color: $blue !important;
   }
 
   & button {
     box-shadow: none !important;
 
     &:hover {
-      color: $blue  !important;
+      color: $blue !important;
     }
 
     &:focus {
@@ -169,7 +169,7 @@ button.check {
     }
 
     &:focus {
-      border-color: $blue  !important;
+      border-color: $blue !important;
       box-shadow: 0 0 0 0px $blue, 0 0 0 4px rgba(0, 131, 243, 0.1) !important;
     }
   }
@@ -182,7 +182,7 @@ input[type="checkbox"].disabled:checked:before {
 
 .wp-core-ui .attachment.details,
 .attachment:focus {
-  box-shadow: 0 0 0 2px $blue  !important;
+  box-shadow: 0 0 0 2px $blue !important;
 }
 
 /* .setting input,
@@ -366,7 +366,7 @@ input[type="checkbox"].disabled:checked:before {
 }
 
 .prim {
-  background-color: $prim  !important;
+  background-color: $prim !important;
 
   &:hover {
     background: #67cbf0;
@@ -394,7 +394,7 @@ input[type="checkbox"].disabled:checked:before {
 }
 
 .dp-blue {
-  background: $dp-bg  !important;
+  background: $dp-bg !important;
   color: white !important;
 
   &:hover {
@@ -659,14 +659,14 @@ input[type="checkbox"].disabled:checked:before {
 }
 
 .btcd-ck-wrp:hover input~.btcd-mrk {
-  border-color: $blue  !important;
+  border-color: $blue !important;
 }
 
 
 
 .btcd-ck-wrp input:checked~.btcd-mrk {
   background-color: $blue;
-  border-color: $blue  !important;
+  border-color: $blue !important;
 }
 
 .btc-range {
@@ -1458,7 +1458,7 @@ input[type="checkbox"].disabled:checked:before {
 
 .btcd-btn-o-blue {
   background: transparent;
-  color: $blue  !important;
+  color: $blue !important;
   border: 1px solid $blue;
   transition: background 0.2s !important;
 
@@ -1470,7 +1470,7 @@ input[type="checkbox"].disabled:checked:before {
 
 .btcd-btn-o-red {
   background: transparent;
-  color: $red  !important;
+  color: $red !important;
   border: 1px solid $red;
   transition: background 0.2s !important;
 
@@ -1628,6 +1628,72 @@ nav.top-nav {
   background: $dp-bg;
   height: 230px;
   padding: 20px;
+
+  & .top-wrp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .migrate-wrp {
+      & .migrate-txt {
+        color: #fff;
+      }
+
+      & .migrate-btn {
+        margin-left: 10px;
+        font-weight: 600;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+      }
+
+      & .confirm-content {
+        padding: 0;
+      }
+
+      & .migrate-modal {
+        text-align: justify;
+        margin: 5px 0;
+
+        & h3 {
+          font-size: 15px;
+          font-weight: 600;
+          margin-top: 10px;
+          margin-bottom: 8px;
+        }
+
+        & p {
+          font-size: 13px;
+          margin: 0;
+          margin-bottom: 8px;
+        }
+
+        & small {
+          text-align: left;
+        }
+
+        & input {
+          width: 100%;
+          border-radius: 8px;
+          margin-top: 8px;
+          font-family: "Montserrat";
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 500;
+          height: 35px;
+          background: #F3F3F3 !important;
+          border: 1px solid #E5E5E5 !important;
+        }
+
+        & .migrate-err {
+          color: red;
+
+        }
+      }
+    }
+  }
 }
 
 .route-wrp {
@@ -2748,7 +2814,7 @@ nav.top-nav {
 }
 
 .app-link-active {
-  background: $light-bg  !important;
+  background: $light-bg !important;
   color: #0e112f !important;
   font-weight: bold !important;
 }
@@ -2806,7 +2872,7 @@ nav.top-nav {
 
 .btcd-f-a {
   background: $light-bg;
-  color: $dp-blue  !important;
+  color: $dp-blue !important;
   box-shadow: -4px 2px 3px 0 black;
 
   &:before {
@@ -2917,11 +2983,11 @@ nav.top-nav {
   transition: box-shadow 0.3s !important;
 
   &:hover:not(:disabled, :focus) {
-    border-color: $dp-txt  !important;
+    border-color: $dp-txt !important;
   }
 
   &:focus {
-    border-color: $blue  !important;
+    border-color: $blue !important;
     box-shadow: 0 0 0 0px $blue, 0 0 0 4px rgba(0, 131, 243, 0.1) !important;
   }
 
@@ -2976,7 +3042,7 @@ nav.top-nav {
 
 select.btcd-paper-inp {
   background: url($select-arrow) no-repeat right #fff;
-  color: $dp-bg  !important;
+  color: $dp-bg !important;
   box-shadow: none;
   max-width: initial !important;
   height: auto !important;
@@ -2986,7 +3052,7 @@ select.btcd-paper-inp {
 
   &:hover:not(:disabled),
   :focus {
-    color: $dp-blue  !important;
+    color: $dp-blue !important;
     background-position-y: 12px;
   }
 }
@@ -3001,12 +3067,12 @@ select.btcd-paper-inp {
   border: 1px solid #e2e2e2 !important;
 
   &:focus {
-    border-color: $blue  !important;
+    border-color: $blue !important;
     box-shadow: 0 0 0 0px $blue, 0 0 0 4px rgba(0, 131, 243, 0.1) !important;
   }
 
   &:hover:not(:disabled, :focus) {
-    border-color: $dp-txt  !important;
+    border-color: $dp-txt !important;
   }
 
   &>button>svg {
@@ -3097,7 +3163,7 @@ select.btcd-paper-inp {
   }
 
   &:focus {
-    color: $dp-blue  !important;
+    color: $dp-blue !important;
     outline: none !important;
     box-shadow: none !important;
   }
@@ -3686,7 +3752,7 @@ select.btcd-paper-inp {
 
 .btcd-mt-inp {
   display: inline-block;
-  color: $dp-bg  !important;
+  color: $dp-bg !important;
   position: relative;
   line-height: 1;
   border-radius: 8px;
@@ -3831,7 +3897,7 @@ select.btcd-paper-inp {
 .btcd-mt-inp>input:focus+span::after,
 .btcd-mt-inp>textarea:focus+span::before,
 .btcd-mt-inp>textarea:focus+span::after {
-  border-top-color: $blue  !important;
+  border-top-color: $blue !important;
   box-shadow: inset 0 2px $blue;
 }
 
@@ -3906,7 +3972,7 @@ select.btcd-paper-inp {
   & select {
     display: block;
     background: url($select-arrow) no-repeat right #fff;
-    color: $dp-bg  !important;
+    color: $dp-bg !important;
     box-shadow: none;
     height: auto;
     line-height: 1;
@@ -4847,7 +4913,7 @@ _:-ms-fullscreen,
 }
 
 .tippy-backdrop {
-  background: $dp-bg  !important;
+  background: $dp-bg !important;
 }
 
 
@@ -4993,7 +5059,7 @@ _:-ms-fullscreen,
 /*css for reponse report*/
 .btcd-date-range {
   display: inline-block;
-  color: $dp-bg  !important;
+  color: $dp-bg !important;
   width: 100%;
   border-color: #e2e2e2 !important;
   background: white;

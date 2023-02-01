@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Link, NavLink, Route, Switch } from 'react-rou
 import { useRecoilValue } from 'recoil'
 import Loader from './components/Loaders/Loader'
 import TableLoader from './components/Loaders/TableLoader'
+import MigrateButton from './components/MigrateButton'
 import { $bits } from './GlobalStates'
 import './resource/icons/style.css'
 import logo from './resource/img/bit-form-logo.svg'
@@ -50,30 +51,33 @@ export default function App() {
       <Router basename={typeof bits !== 'undefined' ? bits.baseURL : '/'}>
         <div className="Btcd-App">
           <div className="nav-wrp">
-            <div className="flx">
-              <div className="logo flx" title={__('Bit Form', 'bitform')}>
-                <Link to="/" className="flx">
-                  <img src={logo} alt="bit form logo" className="ml-2" />
-                  <span className="ml-2">Bit Form</span>
-                </Link>
-              </div>
-              <nav className="top-nav ml-2">
-                <NavLink
-                  exact
-                  to="/"
-                  activeClassName="app-link-active"
-                >
-                  {__('My Forms', 'bitform')}
-                </NavLink>
+            <div className="top-wrp">
+              <div className="flx">
+                <div className="logo flx" title={__('Bit Form', 'bitform')}>
+                  <Link to="/" className="flx">
+                    <img src={logo} alt="bit form logo" className="ml-2" />
+                    <span className="ml-2">Bit Form</span>
+                  </Link>
+                </div>
+                <nav className="top-nav ml-2">
+                  <NavLink
+                    exact
+                    to="/"
+                    activeClassName="app-link-active"
+                  >
+                    {__('My Forms', 'bitform')}
+                  </NavLink>
 
-                <NavLink
-                  to="/app-settings/recaptcha"
-                  activeClassName="app-link-active"
-                  isActive={(m, l) => l.pathname.match(/app-settings|recaptcha|gclid|cpt|api|smtp|payments/g)}
-                >
-                  {__('App Settings', 'bitform')}
-                </NavLink>
-              </nav>
+                  <NavLink
+                    to="/app-settings/recaptcha"
+                    activeClassName="app-link-active"
+                    isActive={(m, l) => l.pathname.match(/app-settings|recaptcha|gclid|cpt|api|smtp|payments/g)}
+                  >
+                    {__('App Settings', 'bitform')}
+                  </NavLink>
+                </nav>
+              </div>
+              <MigrateButton />
             </div>
           </div>
 
