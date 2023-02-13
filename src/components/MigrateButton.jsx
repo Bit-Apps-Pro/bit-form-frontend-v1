@@ -5,6 +5,7 @@ import ConfirmModal from "./Utilities/ConfirmModal"
 const MigrateButton = () => {
   const [showModal, setShowModal] = useState(false)
   const [showErr, setShowErr] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const confirmTxtBox = useRef(null)
 
   const handleConfirmTxt = e => {
@@ -15,13 +16,14 @@ const MigrateButton = () => {
   }
 
   const handleMigrate = () => {
+    setIsLoading(true)
     const confirmTxt = confirmTxtBox.current.value
     if (confirmTxt !== 'CONFIRM') {
       setShowErr(true)
       return
     }
     setShowErr(false)
-    bitsFetch({}, 'bitforms_migrate_to_v2')
+    bitsFetch({}, 'bitforms_start_migration_to_v2')
       .then((res) => {
         if (res.success) {
           window.location.reload()
@@ -40,22 +42,24 @@ const MigrateButton = () => {
         btnTxt="Migrate Now"
         btnClass="blue"
         action={handleMigrate}
+        isLoading={isLoading}
       >
         <div className="migrate-modal">
           <h3>Please Read First!</h3>
-          <p>
-            Upon migration to version 2 of the Bit Form, all previously created forms will become inactive and will no longer function within the website.
-          </p>
-          {/* <p>
-            The "Migrate Only" button will only do the migration process to version 2. Afterwards, the forms can be manually converted to the new version individually.
-          </p> */}
-          <p>
-            The "Migrate Now" button will do the migration process to version 2 and automatically convert all forms to the new one.
-          </p>
-          <p>
-            However, if anything goes wrong, it is possible to convert the forms again to the new version after the migration is complete.
-          </p>
-          <p><strong>Note:</strong> The converted forms will get a new form id, so you will have to replace the shortcodes of bitform v1 forms with the new shortcode in your site.</p>
+          <ul>
+            <p>
+              Do not close the browser tab during the process.
+            </p>
+            <p>
+              All forms styling will be reset to default Bit Form theme.
+            </p>
+            <p>
+              Upgrade process may take several minutes and will refresh the page multiple times.
+            </p>
+            <p>
+              In case of any interruption or anything goes wrong, just reload the page and it will pick up where it left off.
+            </p>
+          </ul>
           <small>Type "CONFIRM" in the input box below to proceed:</small>
           <input ref={confirmTxtBox} type="text" placeholder="Type CONFIRM" onChange={handleConfirmTxt} />
           {showErr && <p className="migrate-err">Check if you typed "CONFIRM" correctly.</p>}
