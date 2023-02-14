@@ -16,16 +16,18 @@ const MigrateButton = () => {
   }
 
   const handleMigrate = () => {
-    setIsLoading(true)
     const confirmTxt = confirmTxtBox.current.value
     if (confirmTxt !== 'CONFIRM') {
       setShowErr(true)
       return
     }
+    window.onbeforeunload = () => true
+    setIsLoading(true)
     setShowErr(false)
     bitsFetch({}, 'bitforms_start_migration_to_v2')
       .then((res) => {
         if (res.success) {
+          window.onbeforeunload = null
           window.location.reload()
         }
       })
@@ -37,7 +39,7 @@ const MigrateButton = () => {
       <button className="migrate-btn red red-sh" onClick={() => setShowModal(true)}>Migrate to V2</button>
       <ConfirmModal
         show={showModal}
-        close={() => setShowModal(false)}
+        close={!isLoading ? () => setShowModal(false) : null}
         title="Migrate to Version 2.0?"
         btnTxt="Migrate Now"
         btnClass="blue"
@@ -48,10 +50,10 @@ const MigrateButton = () => {
           <h3>Please Read First!</h3>
           <ul>
             <p>
-              Do not close the browser tab during the process.
+              All forms styling will be reset to default Bit Form theme.
             </p>
             <p>
-              All forms styling will be reset to default Bit Form theme.
+              Do not close the browser tab during the process.
             </p>
             <p>
               Upgrade process may take several minutes and will refresh the page multiple times.
