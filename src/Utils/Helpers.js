@@ -136,14 +136,14 @@ export const dateTimeFormatter = (dateStr, format) => {
   allFormatObj.Y = newDate.toLocaleDateString('en-US', { year: 'numeric' })
   allFormatObj.y = newDate.toLocaleDateString('en-US', { year: '2-digit' })
   // Time
-  allFormatObj.a = newDate.toLocaleTimeString('en-US', { hour12: true }).split(/\s+/)[1].toLowerCase()
+  allFormatObj.a = newDate.toLocaleTimeString('en-US', { hour12: true }).split(/\s+/)?.[1]?.toLowerCase() || ''
   // eslint-disable-next-line prefer-destructuring
-  allFormatObj.A = newDate.toLocaleTimeString('en-US', { hour12: true }).split(/\s+/)[1]
+  allFormatObj.A = newDate.toLocaleTimeString('en-US', { hour12: true }).split(/\s+/)?.[1] || ''
   // Hour
   // eslint-disable-next-line prefer-destructuring
-  allFormatObj.g = newDate.toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' }).split(/\s+/)[0]
+  allFormatObj.g = newDate.toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' }).split(/\s+/)?.[0] || ''
   // eslint-disable-next-line prefer-destructuring
-  allFormatObj.h = newDate.toLocaleTimeString('en-US', { hour12: true, hour: '2-digit' }).split(/\s+/)[0]
+  allFormatObj.h = newDate.toLocaleTimeString('en-US', { hour12: true, hour: '2-digit' }).split(/\s+/)?.[0] || ''
   allFormatObj.G = newDate.toLocaleTimeString('en-US', { hour12: false, hour: 'numeric' })
   allFormatObj.H = newDate.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit' })
   // Minute
@@ -152,7 +152,7 @@ export const dateTimeFormatter = (dateStr, format) => {
   allFormatObj.s = newDate.toLocaleTimeString('en-US', { second: '2-digit' })
   // Additional
   // eslint-disable-next-line prefer-destructuring
-  allFormatObj.T = newDate.toLocaleTimeString('en-US', { timeZoneName: 'short' }).split(/\s+/)[2]
+  allFormatObj.T = newDate.toLocaleTimeString('en-US', { timeZoneName: 'short' }).split(/\s+/)?.[2] || ''
   allFormatObj.c = newDate.toISOString()
   allFormatObj.r = newDate.toUTCString()
   allFormatObj.U = newDate.valueOf()
