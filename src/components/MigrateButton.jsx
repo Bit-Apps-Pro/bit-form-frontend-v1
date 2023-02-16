@@ -53,13 +53,13 @@ const MigrateButton = () => {
               All forms styling will be reset to default Bit Form theme.
             </p>
             <p>
-              Do not close the browser tab during the process.
-            </p>
-            <p>
               Upgrade process may take several minutes and will refresh the page multiple times.
             </p>
             <p>
               In case of any interruption or anything goes wrong, just reload the page and it will pick up where it left off.
+            </p>
+            <p>
+              Do not close the browser tab during the process.
             </p>
           </ul>
           <small>Type "CONFIRM" in the input box below to proceed:</small>
