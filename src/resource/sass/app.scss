@@ -1692,6 +1692,10 @@ nav.top-nav {
 
         }
       }
+      & .btn:focus{
+        border-color: #0069ff !important;
+        box-shadow: 0 0 0 0px #0069ff, 0 0 0 3px rgba(0, 130, 243, 0.333) !important;
+      }
     }
   }
 }

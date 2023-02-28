@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+import { CheckmarkIcon } from "react-hot-toast"
 import bitsFetch from "../Utils/bitsFetch"
 import ConfirmModal from "./Utilities/ConfirmModal"
 
@@ -64,7 +65,7 @@ const MigrateButton = () => {
               Do not close the browser tab during the process.
             </p>
           </ul>
-          <small>Type "CONFIRM" in the input box below to proceed:</small>
+          <small>Type <strong>&quot;CONFIRM&quot;</strong> in the input box below to proceed:</small>
           <input ref={confirmTxtBox} type="text" placeholder="Type CONFIRM" onChange={handleConfirmTxt} />
           {showErr && <p className="migrate-err">Check if you typed "CONFIRM" correctly.</p>}
         </div>
