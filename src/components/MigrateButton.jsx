@@ -35,7 +35,9 @@ const MigrateButton = () => {
 
   return (
     <div className="migrate-wrp">
-      <span className="migrate-txt">Version 2.0 is out!</span>
+      <a href="https://docs.form.bitapps.pro/" target="_blank">
+        <span className="migrate-txt">Version 2.0 is out!</span>
+      </a>
       <button className="migrate-btn red red-sh" onClick={() => setShowModal(true)}>Migrate to V2</button>
       <ConfirmModal
         show={showModal}
@@ -50,7 +52,7 @@ const MigrateButton = () => {
           <h3>Please Read First!</h3>
           <ul>
             <p>
-              All forms styling will be reset to default Bit Form theme.
+              All forms styling will be reset to Bit Form default theme.
             </p>
             <p>
               Upgrade process may take several minutes and will refresh the page multiple times.
