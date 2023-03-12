@@ -38,7 +38,7 @@ registerBlockType('bitforms/form-shortcode', {
     const AllForms = [{ value: 0, label: __('Select a Form', 'bitform'), disabled: true }]
 
     bitformsBlock.forms.map(form => {
-      AllForms.push({ label: form.form_name, value: form.id })
+      AllForms.push({ label: `${form.id}. ${form.form_name}`, value: form.id })
     })
     const { attributes, setAttributes, className } = props
     const onChangeContent = formID => {
