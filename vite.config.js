@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react'
-import reactRefresh from '@vitejs/plugin-react-refresh'
+// import reactRefresh from '@vitejs/plugin-react-refresh'
 import path from 'path'
 import { defineConfig } from 'vite'
 import { esbuildCommonjs } from '@originjs/vite-plugin-commonjs'
@@ -8,7 +8,7 @@ export default defineConfig({
 
   plugins: [
     react(),
-    reactRefresh(),
+    // reactRefresh(),
   ],
 
   optimizeDeps: {
