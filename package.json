@@ -7,7 +7,7 @@
     "@paypal/react-paypal-js": "^7.2.1",
     "@popperjs/core": "^2.9.3",
     "@tippyjs/react": "^4.2.5",
-    "bit-form": "link:../..",
+    "bit-form": "link:..\\..",
     "cd": "^0.3.3",
     "core-js": "^3.16.1",
     "create-file-list": "^1.1.0",
